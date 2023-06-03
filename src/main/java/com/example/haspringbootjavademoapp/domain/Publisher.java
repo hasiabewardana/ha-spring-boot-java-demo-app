@@ -10,7 +10,7 @@ import java.util.Set;
 public class Publisher {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long Id;
+    private Long id;
     private String name;
     private String addressLine1;
     private String city;
@@ -33,11 +33,11 @@ public class Publisher {
     }
 
     public Long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Long id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getName() {
@@ -93,23 +93,24 @@ public class Publisher {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Publisher publisher = (Publisher) o;
-        return Id.equals(publisher.Id);
+        return id.equals(publisher.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(Id);
+        return Objects.hash(id);
     }
 
     @Override
     public String toString() {
         return "Publisher{" +
-                "Id=" + Id +
+                "id=" + id +
                 ", name='" + name + '\'' +
                 ", addressLine1='" + addressLine1 + '\'' +
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
                 ", zip='" + zip + '\'' +
+                ", books=" + books +
                 '}';
     }
 }
