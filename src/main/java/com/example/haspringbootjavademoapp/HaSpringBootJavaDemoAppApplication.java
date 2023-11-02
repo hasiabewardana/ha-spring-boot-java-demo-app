@@ -14,8 +14,11 @@ public class HaSpringBootJavaDemoAppApplication {
     public static void main(String[] args) {
 //		Dependency injection
         ApplicationContext ac = SpringApplication.run(HaSpringBootJavaDemoAppApplication.class, args);
-        MyController myController = (MyController) ac.getBean("myController");
-        System.out.println(myController.sayHello());
+
+        System.out.println("\n");
+        System.out.println("---Primary---");
+        MyController mc = (MyController) ac.getBean("myController");
+        System.out.println(mc.sayHello());
 
         System.out.println("\n");
         System.out.println("---Property---");
