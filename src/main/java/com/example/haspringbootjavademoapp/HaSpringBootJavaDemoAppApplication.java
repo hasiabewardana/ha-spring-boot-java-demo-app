@@ -1,9 +1,6 @@
 package com.example.haspringbootjavademoapp;
 
-import com.example.haspringbootjavademoapp.dependencyinjection.controllers.ConstructorInjectedController;
-import com.example.haspringbootjavademoapp.dependencyinjection.controllers.MyController;
-import com.example.haspringbootjavademoapp.dependencyinjection.controllers.PropertyInjectedController;
-import com.example.haspringbootjavademoapp.dependencyinjection.controllers.SetterInjectedController;
+import com.example.haspringbootjavademoapp.dependencyinjection.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -14,6 +11,11 @@ public class HaSpringBootJavaDemoAppApplication {
     public static void main(String[] args) {
 //		Dependency injection
         ApplicationContext ac = SpringApplication.run(HaSpringBootJavaDemoAppApplication.class, args);
+
+        System.out.println("\n");
+        System.out.println("---I18n---");
+        I18nController i18nc = (I18nController) ac.getBean("i18nController");
+        System.out.println(i18nc.sayHello());
 
         System.out.println("\n");
         System.out.println("---Primary---");
